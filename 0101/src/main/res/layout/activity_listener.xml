@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.demo.listener.UserInfo" />
+
+        <import type="com.example.demo.listener.ListenerActivity.YouPresenter" />
+
+        <import type="com.example.demo.listener.StringUtils" />
+
+        <variable
+            name="userInfo"
+            type="UserInfo" />
+
+        <variable
+            name="youPresenter"
+            type="YouPresenter" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context="com.example.demo.main.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF6000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:afterTextChanged="@{youPresenter.afterNameChanged}"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@={userInfo.name}"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:afterTextChanged="@{youPresenter.afterPasswordChanged}"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@={userInfo.password}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{userInfo.name+userInfo.password}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{StringUtils.toUpperCase(userInfo.name)}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:onClick="@{()->youPresenter.onNameClick(userInfo.name)}"
+                android:text="重置用户名"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

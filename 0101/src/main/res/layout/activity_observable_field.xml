@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ObservableFieldActivityBinding">
+
+        <import type="com.example.demo.observablefied.ObservableActivityInfo" />
+
+        <import type="com.example.demo.observablefied.ObservableFieldActivity.ObservableActivityInfoHandler" />
+
+        <variable
+            name="observableActivityInfo"
+            type="com.example.demo.observablefied.ObservableActivityInfo" />
+
+        <variable
+            name="observableActivityInfoHandler"
+            type="ObservableActivityInfoHandler" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context="com.example.demo.main.MainActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#FF6000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_observable_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@{observableActivityInfo.name}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_observable_activity_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@{observableActivityInfo.activityName}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@{observableActivityInfo.fullActivityName}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@{String.valueOf(observableActivityInfo.index)}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@{observableActivityInfo.list.get(observableActivityInfo.index)}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@{String.valueOf(observableActivityInfo.map.get(observableActivityInfo.key))}"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@={observableActivityInfo.name}"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->observableActivityInfoHandler.changeProperty()}"
+                android:text="更新属性"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
