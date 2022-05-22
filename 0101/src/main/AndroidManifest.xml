@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.widget">
+    package="com.example.uicaton">
 
 
     <application
+        android:name="com.example.demo.main.DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,10 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.demo.observablefied.ObservableFieldActivity" />
-        <activity android:name="com.example.demo.listener.ListenerActivity" />
-        <activity android:name="com.example.demo.recycler.RecyclerViewActivity" />
-        <activity android:name="com.example.demo.viewpager.ViewPagerActivity" />
     </application>
 
 </manifest>

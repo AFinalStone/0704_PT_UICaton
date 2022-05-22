@@ -4,13 +4,7 @@
 
     <data class="ActivityMainBindTest">
 
-        <import type="com.example.demo.main.ActivityInfo" />
-
         <import type="com.example.demo.main.MainActivity.ActivityInfoHandler" />
-
-        <variable
-            name="activityInfo"
-            type="com.example.demo.main.ActivityInfo" />
 
         <variable
             name="activityInfoHandler"
@@ -26,90 +20,20 @@
         android:padding="10dp"
         tools:context="com.example.demo.main.MainActivity">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FF6000"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:minWidth="100dp"
-                android:text="@{activityInfo.name}"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/tv_activity_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:minWidth="100dp"
-                android:text="@{activityInfo.activityName}"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:minWidth="100dp"
-                android:text="@{activityInfo.fullActivityName}"
-                android:textColor="@color/black" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{()->activityInfoHandler.changeOnlyProperty()}"
-                android:text="修改单一属性"
-                android:textAllCaps="false" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{()->activityInfoHandler.changeAllProperty()}"
-                android:text="修改全部属性"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
-
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{()->activityInfoHandler.toObservableFieldActivity()}"
-            android:text="进入ObservableField页面"
+            android:onClick="@{()->activityInfoHandler.testBlockCanary()}"
+            android:text="测试BlockCanary"
             android:textAllCaps="false" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{()->activityInfoHandler.toListenerActivity()}"
-            android:text="进入Listener页面"
+            android:onClick="@{()->activityInfoHandler.toAnimActivity()}"
+            android:text="进入动画测试页面"
             android:textAllCaps="false" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->activityInfoHandler.toRecyclerViewActivity()}"
-            android:text="进入Recycler页面"
-            android:textAllCaps="false" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->activityInfoHandler.toViewPagerActivity()}"
-            android:text="进入ViewPager页面"
-            android:textAllCaps="false" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->activityInfoHandler.toGuoTangActivity()}"
-            android:text="打开果糖app"
-            android:textAllCaps="false" />
     </LinearLayout>
 </layout>
