@@ -1,5 +1,6 @@
 package com.example.demo.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void toAnimActivity() {
             Log.d("MainActivity===", "toAnimActivity");
+            startActivity(new Intent(MainActivity.this, MATActivity.class));
         }
 
     }
